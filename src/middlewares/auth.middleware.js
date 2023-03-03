@@ -3,12 +3,13 @@ const passport = require('passport')
 
 //*Importamos controlador que permite validar si usuario existe en la db
 const {findUserById} = require('../users/users.controllers')
+const config = require('../../config').api
 
 //* Generamos cnfioguraciones basicas para manejar passport con jwt
 const passportConfig = {
     //* Extrae el Bearer token de mi  peticion
     jwtFromRequest:ExtractJwt.fromAuthHeaderAsBearerToken(),
-    secretOrKey:'academlo'
+    secretOrKey: config.secretOrKey
 }
 
 
